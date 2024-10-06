@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch - AstroVenture Odyssey</title>
+    <link rel="stylesheet" href="./css/sketch.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">AstroVenture Odyssey</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="sketch.html">Sketch</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="sketch">
+        <h2>Sketch an Exoplanet</h2>
+        <p>Create your own exoplanet design below!</p>
+
+        <div class="sketch-area">
+            <!-- Toolbox Section -->
+            <div class="toolbox">
+                <h3>Toolbox</h3>
+                <label for="lineWidth">Line Width:</label>
+                <input type="range" id="lineWidth" min="1" max="20" value="5">
+                
+                <label for="colorPicker">Choose Color:</label>
+                <input type="color" id="colorPicker" value="#000000">
+    
+                <button id="freehandTool">Freehand Tool</button>
+                <button id="circleTool">Circle Tool</button>
+                <button id="rectangleTool">Rectangle Tool</button>
+                <button id="eraserTool">Eraser Tool</button>
+                <button id="clearCanvas">Clear Canvas</button>
+            </div>
+
+            <!-- Fill Color Section -->
+            <div class="fill-color">
+                <h3>Fill Color</h3>
+                <div class="color" id="redColor"></div>
+                <div class="color" id="greenColor"></div>
+                <div class="color" id="blueColor"></div>
+            </div>
+
+            <!-- Stamp Tool Section -->
+            <div class="stamp-tool">
+                <h3>Stamp Tool</h3>
+                <div class="stamp" id="stamp1"></div>
+                <div class="stamp" id="stamp2"></div>
+                <div class="stamp" id="stamp3"></div>
+            </div>
+
+            <!-- Canvas Area -->
+            <canvas id="planetCanvas" width="900px" height="550px"></canvas>
+
+            <!-- Save Sketch Button -->
+            <button id="saveSketch">Save Sketch</button>
+            <button id="DSketch">3D Sketch</button>
+            <button id="Dfreestyle">3D Freestyle</button>
+        </div>
+    </section>
+
+   
+    <script>
+        let selectedStamp = null; // Variable to store selected stamp
+
+        // Function to handle stamp selection and disable other stamps
+        function selectStamp(stampId, planetName, event) {
+  if (!selectedStamp) {
+    selectedStamp = planetName;
+    localStorage.setItem('selectedStamp', selectedStamp);
+
+    // Fetch planet data from the database
+    fetch(`./3dspace/threejs-earth-main/get_planet_data.php?planet=${planetName}`)
+      .then(response => response.json())
+      .then(planetData => {
+        console.log(planetData);
+        // Display the info panel with the planet data
+        showInfoPanel(planetName, planetData, event);
+      })
+      .catch(error => console.error('Error fetching planet data:', error));
+  }
+}
+
+        // Event listeners for the stamps
+        document.getElementById("stamp1").addEventListener("click", function () {
+            selectStamp("stamp1", 'kepler-186f');
+      
+        });
+
+        document.getElementById("stamp2").addEventListener("click", function () {
+            selectStamp("stamp2", '55cancrie');
+        });
+
+        document.getElementById("stamp3").addEventListener("click", function () {
+            selectStamp("stamp3", 'proximacentaurib');
+        });
+
+        // 3D Sketch button event listener
+        console.log(localStorage.getItem('selectedStamp'));
+
+        document.getElementById("DSketch").addEventListener("click", function() {
+    if (selectedStamp) {
+        // Redirect to 3D scene with the selected planet name in the URL
+        window.location.href = `./3d/threejs-earth-main/index.html`;
+    } else {
+        alert("Please select a stamp first.");
+    }
+});
+document.getElementById("Dfreestyle").addEventListener("click", function() {
+        // Redirect to 3D scene with the selected planet name in the URL
+        window.location.href =`./3d/threejs-earth-main/index.html` })
+    </script>
+    <script src="./js/sketch.js"></script>
+    <script src="./3d/threejs-earth-main/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* General styles for the home page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d2b;
+    color: white;
+}
+
+
+
+#home {
+    height: 100vh;
+    
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home h2 {
+    font-size: 3rem;
+}
+
+.btn {
+    background-color: #ff7f50;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #101035;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff7f50;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* Styling for the video */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Ensures the video stays behind other content */
+    object-fit: cover; /* Ensures the video covers the background without distortion */
+}
+
+/* Section content styling */
+#home .content {
+    position: center;
+    z-index: 1;
+    color: white; 
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}

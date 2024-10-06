@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - AstroVenture Odessey</title>
+    <link rel="stylesheet" href="./css/categories.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">AstroVenture Odessey</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="sketch.html">Sketch</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section id="categories">
+        <h2>Exoplanet Categories</h2>
+        <div class="category-cards">
+            <div class="card">
+                <h3>Gas Giants Planets</h3>
+                <p>Massive planets primarily composed of hydrogen and helium.</p>
+                <button class="dropdown-btn" onclick="toggleDetails(0)">Show Details</button>
+            </div>
+            <div class="card">
+                <h3>Terrestial Planets</h3>
+                <p>Earth-like planets with solid surfaces.</p>
+                <button class="dropdown-btn" onclick="toggleDetails(1)">Show Details</button>
+            </div>
+            <div class="card">
+                <h3>Neptune-Like Planets</h3>
+                <p>Planets similar to Neptune, with thick atmospheres of gas.</p>
+                <button class="dropdown-btn" onclick="toggleDetails(2)">Show Details</button>
+            </div>
+            <div class="card">
+                <h3>Super-Earths Planets</h3>
+                <p>Planets larger than Earth but smaller than Neptune, possibly rocky.</p>
+                <button class="dropdown-btn" onclick="toggleDetails(3)">Show Details</button>
+            </div>
+        </div>
+       
+        <div class="category-details">
+            <div class="detail" id="detail-0">
+                <p>
+                    A gas giant is a large planet mostly composed of helium and/or hydrogen.
+                    These planets, like Jupiter and Saturn in our solar system, don’t have hard surfaces and instead have swirling gases above a solid core.
+                    Gas giant exoplanets can be much larger than Jupiter, and much closer to their stars than anything found in our solar system.
+                    Gas giants, like Jupiter or Saturn in our solar system, are composed mostly of helium and/or hydrogen.
+                    Gas giants nearer to their stars are often called “hot Jupiters.”
+                </p>
+                <p>Facts:</p>
+                <li>51 peg b was the first planet discovered around a sun-like star in 1995.</li>
+                <li>It is thought they form within the first million years of a sun-like star’s life…or not at all.</li>
+                <li>Hot Jupiters orbit so close to their stars that their temperatures soar into the thousands of degrees.</li>
+                <li>KELT-9 b, the hottest gas giant found so far, is hotter than most stars.</li>
+               <img src="./resources/Gasgiants.jpg"width: 400px; height: 200px; alt="Image">
+            </div>
+            <div class="detail" id="detail-1">
+                <p>
+                    In our solar system, Earth, Mars, Mercury, and Venus are terrestrial, or rocky, planets.
+                    For planets outside our solar system, those between half of Earth’s size to twice its radius are 
+                    considered terrestrial. Terrestrial planets are rocky worlds, composed of rock, silicate, water, and/or carbon.
+                </p>
+                <p>Facts:</p>
+                <li>There could be more than 10 billion terrestrial planets across our galaxy.</li>
+                <li>The 7 Earth-size planets in the TRAPPIST-1 system are thought to be terrestrial (4 are super-Earth size).</li>
+                <li>Habitable terrestrial planets may be present in binary (two-star) systems.</li>
+                <li>Kepler-11b is a terrestrial planet 10 times closer to its star than Earth is to the sun.</li>
+                <img src ="./resources/Terrestialplanets.jpg"width: 400px; height: 200px; alt="Image">
+            </div>
+            <div class="detail" id="detail-2">
+                <p>
+                    Neptunian exoplanets are similar in size to Neptune or Uranus in our solar system.
+                    Neptunian planets typically have hydrogen and helium-dominated atmospheres with cores of rock and heavier metals.
+                </p>
+                <p>Facts:</p>
+                <li>In 2014, researchers discovered the first ice giant exoplanet 25,000 light years away.</li>
+                <li>An enormous comet-like cloud of hydrogen is bleeding off of a warm, Neptune-sized exoplanet.</li>
+                <li>Neptune-sized worlds may be more likely to form in the icy outer reaches of planetary systems.</li>
+                <img src ="./resources/Neptune-LikePlanets.jpg" width: 400px; height: 200px; alt="Image">
+            </div>
+            <div class="detail" id="detail-3">
+                <p>
+                    Super-Earths – a class of planets unlike any in our solar system –
+                    are more massive than Earth yet lighter than ice giants like Neptune and Uranus, and can be made of gas, 
+                    rock or a combination of both.
+                </p>
+                <p>Facts:</p>
+                <li>Kepler-452b was the first Earth-size planet discovered around a near solar twin.</li>
+                <li>Kepler-22b is a super-Earth that could be covered in a super ocean.</li>
+                <li>A super-Earth planet could be hiding at the edge of our own solar system.</li>
+                <li>There’s a super-Earth exoplanet with temperatures hot enough to vaporize metal.</li>
+                <img src ="./resources/Superearths.jpg"width: 400px; height: 200px; alt="Image">
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/categories.js"></script>
+</body>
+</html>

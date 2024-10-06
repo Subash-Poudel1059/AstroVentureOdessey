@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #202040;
+    color: white;
+}
+
+nav {
+    background-color: #101035;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff7f50;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sketch-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.toolbox, .fill-color, .stamp-tool {
+    margin-right: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+#planetCanvas {
+    border: 2px solid black;
+    background-color: white;
+}
+
+.toolbox input[type="range"],
+.toolbox input[type="color"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.toolbox button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fill-color .color {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#redColor {
+    background-color: red;
+}
+
+#greenColor {
+    background-color: green;
+}
+
+#blueColor {
+    background-color: blue;
+}
+
+.stamp-tool .stamp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#saveSketch {
+    margin-top: 16px;
+   
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+#DSketch {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+#Dfreestyle {
+    margin-top: 16px;
+   
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+#stamp1{
+    background-color: aqua ;
+}
+#stamp2{
+    background-color: red ;
+}
+#stamp3{
+    background-color: gray;
+}
